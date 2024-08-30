@@ -40,4 +40,3 @@ public class Payment {
 
 // PhonePe -> 20 Razorpay, 30 PhonePe, 50 JusPay
 // That defines the behaviour but not the implmentation
-// What but not how to do it
