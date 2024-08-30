@@ -26,7 +26,15 @@ public class Payment {
         } else{
             pg = new JusPay();
         }
+        
         pg.payment(cardNo, expiry, cvv, otp, 10000);
+
+        if (pg instanceof Identifiable) {
+            System.out.println("Using " + ((Identifiable) pg).getName() + " for this transaction.");
+        } else {
+            System.out.println("Using an unidentified payment gateway for this transaction.");
+        }
+        
     }
 }
 

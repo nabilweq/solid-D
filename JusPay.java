@@ -1,4 +1,4 @@
-public class JusPay implements PaymentGateway {
+public class JusPay implements PaymentGateway, Identifiable {
 
     // original method
     public String makePayment(int amount, String expiry, String cardNo, int cvv, int otp) {
@@ -14,5 +14,10 @@ public class JusPay implements PaymentGateway {
         } else {
             return 0;
         }
+    }
+
+    @Override
+    public String getName() {
+        return "Juspay";
     }
 }

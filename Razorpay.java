@@ -1,4 +1,4 @@
-public class Razorpay implements PaymentGateway {
+public class Razorpay implements PaymentGateway, Identifiable {
 
     // original
     public int doPayment(String cardNo, String expiry, int cvv, int otp, int amount) {
@@ -13,5 +13,10 @@ public class Razorpay implements PaymentGateway {
     public int payment(String card, String expiry, int cvv, int otp, int amount) {
         int result = doPayment(card, expiry, cvv, otp, amount);
         return result;
+    }
+
+    @Override
+    public String getName() {
+        return "Razorpay";
     }
 }
